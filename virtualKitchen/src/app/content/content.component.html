@@ -1,0 +1,51 @@
+<div class="container">                
+   
+    <div class="row" >
+            
+           
+            <div class="box" *ngFor="let recipe of recipeData;let i=index" >
+                
+                <h4 style="padding-left: 180px;">
+                    <b><I>{{this.recipe.name}}</I></b></h4>
+                 
+                <div class="col-md-5"  style=" width: 150px;height:150px;">
+                        <img class="thumbnail img-responsive" 
+                         [src]="this.recipe.imageURL" />
+                </div>  
+                <div class="col-md-8"  >
+                       <p>{{ this.recipe.description }}</p>
+                </div> 
+                <button type="button" class="btn btn-primary" (click)="displayTable(this.recipe,i)">
+                    Teach me to cook!</button>  
+            </div>
+             
+            <div class="rbox"><h1 style="padding-top: 40px">Hello, chef!</h1>
+                <td></td>
+            <div *ngIf="showtable">
+                <table class="table table-bordered"  
+                 style="border: solid black 1px;background-color: grey" >
+                          
+                    <tr>
+                          <th>Ingredient</th>
+                          <th>Quantity</th>
+                          <th>Amount(in INR)</th>
+                        </tr>
+                        <tr   *ngFor="let q of Cingredients">
+                           
+                          <td >{{q.name}}</td>
+                          <td >{{q.quantity}}</td>
+                          <td >{{q.price }}</td>
+                        </tr>
+                       
+                </table>
+                <button type="button" class="btn btn-primary" style=" 
+                margin-left:100px;" (click)="moveToCart()">
+                    Add to cart</button> 
+            </div>
+           
+            
+            </div>
+             
+    </div>
+   
+</div>

@@ -1,0 +1,37 @@
+
+  
+
+
+  <div class="container">                
+    <div class="row" >
+      <div class="box">
+        <h3><b>Your Cart Details:</b></h3>
+        
+        <table class="table table-bordered"  
+        style="border: solid black 1px;background-color: grey" >
+                 
+           <tr>
+                 <th>Ingredient</th>
+                 <th>Quantity</th>
+                 <th>Amount(in INR)</th>
+               </tr>
+               <tr   *ngFor="let q of cartIngredientsList">
+                  
+                 <td >{{q.name}}</td>
+                 <td >{{q.quantity}}</td>
+                 <td >{{q.price }}</td>
+               </tr>
+              
+       </table>
+         <h2>Total amount of ingredients:{{sum}}</h2>
+         <button type="button" class="btn btn-primary" style=" 
+                margin-left:100px;" (click)="goBack()">
+                    Go Back</button> 
+                    <button  type="button" class="btn btn-primary"
+                    style="margin-left:100px;" (click)="openSnackBar()" >
+                    Checkout</button> 
+
+                    
+      </div>
+    </div>
+  </div>
